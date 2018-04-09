@@ -1,6 +1,6 @@
 <?php
-	
-	function addMovie($cover, $title, $year, $run, $story, $trailer, $release, $genre) {
+
+	function addMovie($cover, $title, $year, $run, $story, $trailer, $genre) {
 		include('connect.php');
 		if($cover['type'] == "image/jpg" || $cover['type'] == "image/jpeg"){
 			$targetpath = "../images/{$cover['name']}";
@@ -9,12 +9,12 @@
 				//echo "File transfer complete";
 			$th_copy = "../images/TH_{$cover['name']}";
 				if(!copy($targetpath, $th_copy)){
-					$message = "Whoops, that didn't work.";
+					$message = "Try again.";
 					return $message;
 				}
 
 				//Add to database
-				$qstring = "INSERT INTO tbl_movies VALUES(NULL,'{$cover['name']}','{$title}','{$year}','{$run}','{$story}','{$trailer}','{$release}')";
+				$qstring = "INSERT INTO tbl_movies VALUES(NULL,'{$cover['name']}','{$title}','{$year}','{$run}','{$story}','{$trailer}')";
 				//echo $qstring;
 				$result = mysqli_query($link, $qstring);
 				if($result){
@@ -36,7 +36,7 @@
 
 
 		}else{
-			echo "No F'n GIF's";
+			echo "Try again!";
 		}
 		mysqli_close($link);
 	}

@@ -11,7 +11,6 @@
 		$run = $_POST['run'];
 		$story = $_POST['story'];
 		$trailer = $_POST['trailer'];
-		$release = $_POST['release'];
 		$genre = $_POST['genList'];
 		$result = addMovie($cover, $title, $year, $run, $story, $trailer, $release, $genre);
 		$message = $result;
@@ -49,9 +48,6 @@
 			<br><br>
 			<label>Movie Trailer:</label>
 			<input type="text" name="trailer" value="">
-			<br><br>
-			<label>Movie Release:</label>
-			<input type="text" name="release" value="">
 			<br><br>
 			<select name="genList">
 				<option>Please select a movie genre...</option>
