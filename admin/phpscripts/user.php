@@ -2,13 +2,29 @@
 
 	function createUser($fname, $username, $password, $email, $lvllist) {
 		include('connect.php');
+
+		$random = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+;:,.?";
+		$password = substr(str_shuffle($random),0,8);
+		if($password){
+		  $encrypt_pass = password_hash($password, PASSWORD_BCRYPT);
+		  $password = $encrypt_pass;
+		}
+
+
 		$userstring = "INSERT INTO tbl_user VALUES(NULL, '{$fname}', '{$username}', '{$password}', '{$email}', NULL, '{$lvllist}', 'no' )";
+
 		//echo $userstring;
 		$userquery = mysqli_query($link, $userstring);
+
 		if($userquery) {
 			redirect_to('admin_index.php');
+			$to = $email;
+		  $subj = "Your account information - Please log in";
+		  $msg = "Your Username: ".$username."\n\nYour Password: ".$password."\n\nLog In Here: ".$url;
+		  mail($to,$subj,$msg);
+		  //echo $msg;
 		}else{
-			$message = "Your hiring practices have failed you.  This individual sucks.";
+			$message = "Try again!";
 			return $message;
 		}
 		mysqli_close($link);
@@ -16,14 +32,14 @@
 
 	function editUser($id, $fname, $username, $password, $email) {
 		include('connect.php');
-		
+
 		$updatestring = "UPDATE tbl_user SET user_fname='{$fname}', user_name='{$username}', user_pass='{$password}', user_email='{$email}' WHERE user_id={$id}";
 		$updatequery = mysqli_query($link, $updatestring);
 
 		if($updatequery) {
 			redirect_to("admin_index.php");
 		}else{
-			$message = "Guess you got canned...";
+			$message = "Try again!";
 			return $message;
 		}
 
@@ -37,7 +53,7 @@
 		if($delquery) {
 			redirect_to("../admin_index.php");
 		}else{
-			$message = "Bye, bye...";
+			$message = "Try again!";
 			return $message;
 		}
 		mysqli_close($link);

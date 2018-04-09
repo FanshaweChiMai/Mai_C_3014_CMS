@@ -34,7 +34,7 @@ max_lengths($max_lengths);
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Login page</title>
+  <title>Form Validation</title>
 </head>
 <body>
   <div class="wrapper">

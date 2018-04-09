@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
-<title>Welcome to your admin panel login</title>
+<title>Admin Login</title>
 </head>
 <body>
 	<div class="wrapper">

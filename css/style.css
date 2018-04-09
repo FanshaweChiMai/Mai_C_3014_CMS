@@ -170,7 +170,20 @@ padding: 15px;
   padding: 15px;
 }
 
+.welcomeMessage {
+  font-family: 'Jua', sans-serif;
+  font-size: 25px;
+  color: #8ed2cd;
+  padding: 15px;
+  background-color: #9037a5;
+}
 
+.welcomeMessage p {
+  font-family: 'Jua', sans-serif;
+  font-size: 25px;
+  color: #8ed2cd;
+  padding: 15px;
+}
 #submitButton{
 width: 150px;
 font-weight: bold;
