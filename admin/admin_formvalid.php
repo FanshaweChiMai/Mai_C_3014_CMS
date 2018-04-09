@@ -31,36 +31,42 @@ max_lengths($max_lengths);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
   <title>Login page</title>
 </head>
 <body>
-  <?php echo form_errors($errors);
+  <div class="wrapper">
+    <?php echo form_errors($errors);
 
-  $no_attack = "&\'";
-  $attack = "\x8F!!!";
-  //echo htmlspecialchars($no_attack, ENT_QUOTES, 'UTF-8')."<br>";
-  // echo $attack;
-  //echo htmlspecialchars($attack, ENT_QUOTES, 'UTF-8')."<br>";
-
-
-  ?>
+    $no_attack = "&\'";
+    $attack = "\x8F!!!";
+    //echo htmlspecialchars($no_attack, ENT_QUOTES, 'UTF-8')."<br>";
+    // echo $attack;
+    //echo htmlspecialchars($attack, ENT_QUOTES, 'UTF-8')."<br>";
 
 
-<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-  <label for="">Name</label>
-  <input type="text" name="name" value="">
-<br>
-  <!-- <label for="">Password</label>
-  <input type="text" name="password" value="">
-<br> -->
-<label for="">Phone</label>
-<input type="tel" name="phone" value="">
-<br>
-<label for="">Address</label>
-<input type="text" name="address" value="">
-<br>
-  <input type="submit" name="submit" value="Submit">
+    ?>
 
-</form>
+
+  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+    <label for="">Name</label>
+    <input type="text" name="name" value="">
+  <br>
+    <!-- <label for="">Password</label>
+    <input type="text" name="password" value="">
+  <br> -->
+  <label for="">Phone</label>
+  <input type="tel" name="phone" value="">
+  <br>
+  <label for="">Address</label>
+  <input type="text" name="address" value="">
+  <br>
+    <input type="submit" name="submit" value="Submit">
+
+  </form>
+  </div>
+
 </body>
 </html>

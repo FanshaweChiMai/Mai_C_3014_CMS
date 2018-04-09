@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 50px;
+  background-color: #182359;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+
+.hidden{
+  display: none;
+}
+
+.wrapper{
+  width: 960px;
+  margin: 0 auto;
+}
+
+#fullNav{
+  background-color: #6cffe3;
+  float: left;
+  padding: 20px 100px;
+  border-radius: 50px;
+  width: 760px;
+  box-shadow: 5px 8px #303030;
+}
+
+.filterNav {
+  display: block;
+  list-style-type: none;
+}
+.filterNav li {
+  display: inline;
+}
+
+.filterNav li a {
+  display: inline;
+  text-decoration: none;
+  font-family: 'Jua', sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  color: #ee4b9b;
+  -webkit-transition: ease-in-out;
+  -o-transition: ease-in-out;
+  -moz-transition: ease-in-out;
+  transition: ease-in-out;
+}
+
+.filterNav li a:hover{
+ color: #c44186;
+}
+
+#navHead {
+  font-family: 'Jua', sans-serif;
+  font-size: 35px;
+  color: #c44186;
+  margin: 10px;
+}
+
+.eachMovie {
+  float: left;
+  width: 300px;
+  padding: 15px 0 ;
+}
+
+.eachMovie img{
+  width: auto;
+  height: 300px;
+  margin-left: 50px;
+}
+
+.eachMovie h3 {
+  font-size: 12px;
+  margin-left: 50px;
+  color: #8ed2cd;
+}
+
+.eachMovie p {
+  margin-left: 50px;
+  color: #8ed2cd;
+}
+
+.eachMovie a {
+  text-decoration: none;
+  margin-left: 50px;
+  color: #ee4b9b;
+}
+
+.detailPoster{
+  width: 450px;
+  margin-left: 30px;
+padding: 15px;
+}
+
+.movieTitle{
+  font-family: 'Jua', sans-serif;
+  font-size: 25px;
+  color: #ee4b9b;
+  padding: 15px;
+}
+
+.movieYear{
+color: #8ed2cd;
+padding: 15px;
+}
+
+.moviePlot{
+color: #8ed2cd;
+padding: 15px;
+}
+
+.goBack {
+  text-decoration: none;
+  color: #9037a5;
+  padding: 15px;
+}
+
+.formHead{
+font-size: 30px;
+color: #9037a5;
+margin:  3% 28%;
+}
+
+form {
+  margin:  3% 28%;
+  padding: 20px;
+  background-color: #8ed2cd;
+  border-radius: 20px;
+}
+
+label {
+  font-size: 25px;
+  color: #182359;
+  width: 350px;
+  padding: 5px;
+}
+input {
+  width: 330px;
+  padding: 10px;
+  margin: 15px;
+}
+
+select {
+  width: 330px;
+  padding: 10px;
+  margin: 15px;
+  font-size: 20px;
+}
+
+.userFunc {
+  margin:  3% 15%;
+  padding: 20px;
+  background-color: #8ed2cd;
+  border-radius: 20px;
+}
+.userFunc a {
+text-decoration: none;
+font-size: 25px;
+color: #182359;
+padding: 15px;
+}
+
+.delAcc{
+  font-size: 25px;
+  color: #8ed2cd;
+  padding: 15px;
+}
+
+
+#submitButton{
+width: 150px;
+font-weight: bold;
+font-size:20px;
+}
+
+#footer {
+  float: left;
+  width: 960px;
+  padding: 20px;
+}
+
+#designer {
+  float: right;
+  text-decoration: none;
+  color: #8ed2cd;
+}
