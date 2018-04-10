@@ -30,7 +30,7 @@
 			<p class=\"movieYear\">{$row['movies_year']}</p>
 			<p class=\"moviePlot\">{$row['movies_plot']}</p>
 
-			<a class=\"formHead\" href=\"admin_editmovie.php?id={$row['movies_id']}\">Edit Movie Info Movie</a>
+		
 			<a class=\"goBack\" href=\"admin/admin_movies.php\">Back</a>
 
 			";

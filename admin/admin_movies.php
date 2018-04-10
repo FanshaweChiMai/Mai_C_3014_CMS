@@ -37,6 +37,7 @@
 						echo "<div class=\"eachMovie\"> <img src=\"../images/{$row['movies_img']}\" alt=\"{$row['movies_title']}\">
 							<h3>{$row['movies_title']}</h3>
 							<p>{$row['movies_year']}</p>
+								<a  href=\"admin_editmovie.php?id={$row['movies_id']}\">Edit Movie Info</a>
 							<a href=\"admin_details.php?id={$row['movies_id']}\">More Details...</a><br><br></div>
 						";
 					}

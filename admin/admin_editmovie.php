@@ -7,7 +7,7 @@
 	$tbl2 = "tbl_genre";
 	$genQuery = getAll($tbl2);
 
-	$id = $_GET['id'];;
+	$id = $_SESSION['id'];
 	$tbl = "tbl_movies";
 	$col = "movies_id";
 	$popForm = getSingle($tbl, $col, $id);
@@ -15,7 +15,7 @@
 	//echo $info;
 
 	if(isset($_POST['submit'])){
-		$cover = trim($_FILES['cover']);
+		$cover = $_FILES['cover'];
 		$title = trim($_POST['title']);
 		$year = trim($_POST['year']);
 		$run = trim($_POST['run']);
@@ -34,12 +34,12 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
-<title>Edit User</title>
+<title>Edit Movie</title>
 </head>
 <body>
 	<div class="wrapper">
 		<h2 class="formHead">Edit Movie</h2>
-		<?php if(!empty($message)){echo $message;} ?>
+
 		<form action="admin_editmovie.php" method="post">
 			<label>Cover Image:</label>
 			<input type="file" name="cover" value="<?php echo $info['movies_img'];  ?>"><br><br>
