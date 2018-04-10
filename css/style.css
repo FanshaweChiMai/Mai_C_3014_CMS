@@ -184,6 +184,11 @@ padding: 15px;
   color: #8ed2cd;
   padding: 15px;
 }
+
+#movieFunc {
+  position: fixed;
+
+}
 #submitButton{
 width: 150px;
 font-weight: bold;

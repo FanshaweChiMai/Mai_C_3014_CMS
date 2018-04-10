@@ -9,10 +9,9 @@
 		$title = $_POST['title'];
 		$year = $_POST['year'];
 		$run = $_POST['run'];
-		$story = $_POST['story'];
-		$trailer = $_POST['trailer'];
+		$plot = $_POST['plot'];
 		$genre = $_POST['genList'];
-		$result = addMovie($cover, $title, $year, $run, $story, $trailer, $release, $genre);
+		$result = addMovie($cover, $title, $year, $run, $plot, $genre);
 		$message = $result;
 	}
 ?>
@@ -44,13 +43,11 @@
 			<input type="text" name="run" value="">
 			<br><br>
 			<label>Movie Storyline:</label>
-			<input type="text" name="story" value="">
+			<input type="text" name="plot" value="">
 			<br><br>
-			<label>Movie Trailer:</label>
-			<input type="text" name="trailer" value="">
-			<br><br>
+
 			<select name="genList">
-				<option>Please select a movie genre...</option>
+				<option>Please select a movie genre</option>
 				<?php
 				while($row = mysqli_fetch_array($genQuery)){
 					echo "<option value=\"{$row['genre_id']}\">{$row['genre_name']}</option>";

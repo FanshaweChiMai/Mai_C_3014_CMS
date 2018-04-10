@@ -1,6 +1,6 @@
 <?php
 
-	function addMovie($cover, $title, $year, $run, $story, $trailer, $genre) {
+	function addMovie($cover, $title, $year, $run, $plot, $genre) {
 		include('connect.php');
 		if($cover['type'] == "image/jpg" || $cover['type'] == "image/jpeg"){
 			$targetpath = "../images/{$cover['name']}";
@@ -14,7 +14,7 @@
 				}
 
 				//Add to database
-				$qstring = "INSERT INTO tbl_movies VALUES(NULL,'{$cover['name']}','{$title}','{$year}','{$run}','{$story}','{$trailer}')";
+				$qstring = "INSERT INTO tbl_movies VALUES(NULL,'{$cover['name']}','{$title}','{$year}','{$run}','{$plot}')";
 				//echo $qstring;
 				$result = mysqli_query($link, $qstring);
 				if($result){
@@ -28,7 +28,7 @@
 					$qstring3 = "INSERT INTO tbl_mov_genre VALUES(NULL, {$lastID}, {$genre})";
 					$result3 = mysqli_query($link, $qstring3);
 				}
-				redirect_to("admin_index.php");
+				redirect_to("admin_movies.php");
 			}
 
 			//$size = getimagesize($targetpath);

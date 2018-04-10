@@ -1,5 +1,5 @@
 <?php
-	require_once('admin/phpscripts/config.php');
+	require_once('phpscripts/config.php');
 
 	if(isset($_GET['filter'])){
 		$tbl = "tbl_movies";
@@ -24,29 +24,36 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 <title>Movie Reviews Collection</title>
 </head>
 <body>
 	<div class="wrapper">
 			<?php
-				include('includes/nav.html');
+				include('../includes/nav.html');
 
 				if(!is_string($getMovies)){
 					while($row = mysqli_fetch_array($getMovies)){
-						echo "<div class=\"eachMovie\"> <img src=\"images/{$row['movies_img']}\" alt=\"{$row['movies_title']}\">
+						echo "<div class=\"eachMovie\"> <img src=\"../images/{$row['movies_img']}\" alt=\"{$row['movies_title']}\">
 							<h3>{$row['movies_title']}</h3>
 							<p>{$row['movies_year']}</p>
-							<a href=\"details.php?id={$row['movies_id']}\">More Details...</a><br><br></div>
+							<a href=\"admin_details.php?id={$row['movies_id']}\">More Details...</a><br><br></div>
 						";
 					}
 				}else{
 					echo "<p class=\"error\">{$getMovies}</p>";
 				}
 
-				include('includes/footer.html');
-			?>
 
+			?>
+			<div id="movieFunc">
+			  			<h2 class="formHead">Do What You Want With Them</h2>
+			  			<a href="admin_addmovie.php">Add Movie</a>
+			  			<a href="admin_deletemovie.php">Delete Movie</a>
+			</div>
+			<?php
+			include('../includes/footer.html');
+			?>
 	</div>
 </body>
 </html>
