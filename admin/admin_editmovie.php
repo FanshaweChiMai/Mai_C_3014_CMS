@@ -7,7 +7,7 @@
 	$tbl2 = "tbl_genre";
 	$genQuery = getAll($tbl2);
 
-	$id = $_SESSION['id'];
+	$id = $_GET['id'];
 	$tbl = "tbl_movies";
 	$col = "movies_id";
 	$popForm = getSingle($tbl, $col, $id);
@@ -15,13 +15,13 @@
 	//echo $info;
 
 	if(isset($_POST['submit'])){
-		$cover = $_FILES['cover'];
+		// $cover = $_FILES['cover'];
+		$id1 = trim($_POST['id']);
 		$title = trim($_POST['title']);
 		$year = trim($_POST['year']);
 		$run = trim($_POST['run']);
 		$plot = trim($_POST['plot']);
-		$genre = trim($_POST['genList']);
-		$result = editMovie($id, $cover, $title, $year, $run, $plot, $genre);
+		$result = editMovie($id1, $title, $year, $run, $plot);
 		$message = $result;
 	}
 ?>
@@ -41,8 +41,9 @@
 		<h2 class="formHead">Edit Movie</h2>
 
 		<form action="admin_editmovie.php" method="post">
-			<label>Cover Image:</label>
-			<input type="file" name="cover" value="<?php echo $info['movies_img'];  ?>"><br><br>
+			<!-- <label>Cover Image:</label>
+			<input type="file" name="cover" value="<?php echo $info['movies_img'];  ?>"><br><br> -->
+			<input type="hidden" name="id" value="<?php  echo $id?>"/>
 			<label>Movie Title:</label>
 			<input type="text" name="title" value="<?php echo $info['movies_title'];  ?>"><br><br>
 			<label>Movie Year:</label>
@@ -51,14 +52,7 @@
 			<input type="text" name="run" value="<?php echo $info['movies_length'];  ?>"><br><br>
 			<label>Movie Storyline:</label>
 			<input type="text" name="plot" value="<?php echo $info['movies_plot'];  ?>"><br><br>
-			<select name="genList">
-				<option>Please select a movie genre</option>
-				<?php
-				while($row = mysqli_fetch_array($genQuery)){
-					echo "<option value=\"{$row['genre_id']}\">{$row['genre_name']}</option>";
-				}
-				?>
-			</select><br><br>
+
 			<input type="submit" name="submit" value="Edit Movie">
 		</form>
 	</div>

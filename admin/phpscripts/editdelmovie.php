@@ -1,9 +1,9 @@
 <?php
 
-	function editMovie($id, $cover, $title, $year, $run, $plot, $genre) {
+	function editMovie($id, $title, $year, $run, $plot) {
 		include('connect.php');
 
-		$updatestring = "UPDATE tbl_movies SET movies_img='{$cover}', movies_title='{$title}', movies_year='{$year}', movies_length='{$run}' WHERE movies_id={$id}";
+		$updatestring = "UPDATE tbl_movies SET movies_title='{$title}', movies_year='{$year}', movies_length='{$run}' WHERE movies_id={$id}";
 		$updatequery = mysqli_query($link, $updatestring);
 
 		if($updatequery) {

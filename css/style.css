@@ -164,6 +164,7 @@ color: #182359;
 padding: 15px;
 }
 
+
 .delAcc{
   font-size: 25px;
   color: #8ed2cd;
@@ -185,10 +186,8 @@ padding: 15px;
   padding: 15px;
 }
 
-#movieFunc {
-  position: fixed;
 
-}
+
 #submitButton{
 width: 150px;
 font-weight: bold;
