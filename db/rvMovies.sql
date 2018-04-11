@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 08, 2018 at 12:34 AM
+-- Generation Time: Apr 11, 2018 at 01:37 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -299,6 +299,31 @@ INSERT INTO `tbl_mpaa` (`mpaa_id`, `mpaa_name`, `mpaa_desc`) VALUES
 (4, 'R', 'R – Restricted\r\nUnder 17 requires accompanying parent or adult guardian. Contains some adult material. Parents are urged to learn more about the film before taking their young children with them.'),
 (5, 'NC-17', 'NC-17 – Adults Only\r\nNo One 17 and Under Admitted. Clearly adult. Children are not admitted.');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `user_id` mediumint(8) UNSIGNED NOT NULL,
+  `user_fname` varchar(250) NOT NULL,
+  `user_name` varchar(250) NOT NULL,
+  `user_pass` varchar(250) NOT NULL,
+  `user_email` varchar(250) NOT NULL,
+  `user_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `user_level` int(11) NOT NULL,
+  `user_count` int(11) DEFAULT NULL,
+  `user_ip` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_level`, `user_count`, `user_ip`) VALUES
+(1, 'Chi Mai', 'chimai', '10below!!', 'c_mai3@fanshaweonline.ca', '2018-04-11 01:37:17', 1, NULL, '');
+
 --
 -- Indexes for dumped tables
 --
@@ -334,6 +359,12 @@ ALTER TABLE `tbl_mpaa`
   ADD PRIMARY KEY (`mpaa_id`);
 
 --
+-- Indexes for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -366,6 +397,12 @@ ALTER TABLE `tbl_mov_mpaa`
 --
 ALTER TABLE `tbl_mpaa`
   MODIFY `mpaa_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `user_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -47,7 +47,7 @@
 
 
 			?>
-			<div id="movieFunc">
+			<div>
 			  			<h2 class="formHead">Do What You Want With Them</h2>
 			  			<a href="admin_addmovie.php">Add Movie</a>
 			  			<a href="admin_deletemovie.php">Delete Movie</a>
